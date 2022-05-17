@@ -9,7 +9,7 @@ using TodoApi.Models;
 
 namespace ApbApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[TodoItems]")]
     [ApiController]
     public class TodoItemsController : ControllerBase
     {
@@ -27,7 +27,7 @@ namespace ApbApi.Controllers
             return await _context.TodoItems.ToListAsync();
         }
 
-        // GET: api/TodoItems/5
+        // GET: api/TodoItems/5     
         [HttpGet("{id}")]
         public async Task<ActionResult<TodoItem>> GetTodoItem(long id)
         {
