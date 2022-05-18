@@ -20,7 +20,7 @@ namespace ApbApi
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<TodoApi.Startup>();
+                    webBuilder.UseStartup<ApbApi.Startup>();
                 });
     }
 }
