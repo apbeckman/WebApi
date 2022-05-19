@@ -23,10 +23,16 @@ namespace ApbApi
             services.AddDbContext<TodoContext>(opt =>
                opt.UseInMemoryDatabase("TodoList"));
             services.AddControllers();
+            //register swagger generator
+            services.AddSwaggerGen();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            //enable middleware to use generated swagger as JSON endpoint
+            app.UseSwagger();
+            //middleware for swagger UI
+            app.UseSwaggerUI();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
